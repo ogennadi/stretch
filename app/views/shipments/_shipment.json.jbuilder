@@ -1,0 +1,2 @@
+json.extract! shipment, :id, :marketer, :product, :arrived_at, :mother_vessel, :mother_vessel_bl, :jetty, :daughter_vessel, :daughter_vessel_bl, :receiving_depot, :shore_receipt_date, :created_at, :updated_at
+json.url shipment_url(shipment, format: :json)

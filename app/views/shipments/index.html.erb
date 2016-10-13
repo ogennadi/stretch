@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Shipments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Marketer</th>
+      <th>Product</th>
+      <th>Arrived at</th>
+      <th>Mother vessel</th>
+      <th>Mother vessel bl</th>
+      <th>Jetty</th>
+      <th>Daughter vessel</th>
+      <th>Daughter vessel bl</th>
+      <th>Receiving depot</th>
+      <th>Shore receipt date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shipments.each do |shipment| %>
+      <tr>
+        <td><%= shipment.marketer %></td>
+        <td><%= shipment.product %></td>
+        <td><%= shipment.arrived_at %></td>
+        <td><%= shipment.mother_vessel %></td>
+        <td><%= shipment.mother_vessel_bl %></td>
+        <td><%= shipment.jetty %></td>
+        <td><%= shipment.daughter_vessel %></td>
+        <td><%= shipment.daughter_vessel_bl %></td>
+        <td><%= shipment.receiving_depot %></td>
+        <td><%= shipment.shore_receipt_date %></td>
+        <td><%= link_to 'Show', shipment %></td>
+        <td><%= link_to 'Edit', edit_shipment_path(shipment) %></td>
+        <td><%= link_to 'Destroy', shipment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Shipment', new_shipment_path %>

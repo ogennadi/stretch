@@ -1,0 +1,67 @@
+<%= form_for(shipment) do |f| %>
+  <% if shipment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(shipment.errors.count, "error") %> prohibited this shipment from being saved:</h2>
+
+      <ul>
+      <% shipment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :marketer %>
+    <%= f.text_field :marketer %>
+  </div>
+
+  <div class="field">
+    <%= f.label :product %>
+    <%= f.text_field :product %>
+  </div>
+
+  <div class="field">
+    <%= f.label :arrived_at %>
+    <%= f.date_select :arrived_at %>
+  </div>
+
+  <div class="field">
+    <%= f.label :mother_vessel %>
+    <%= f.text_field :mother_vessel %>
+  </div>
+
+  <div class="field">
+    <%= f.label :mother_vessel_bl %>
+    <%= f.date_select :mother_vessel_bl %>
+  </div>
+
+  <div class="field">
+    <%= f.label :jetty %>
+    <%= f.text_field :jetty %>
+  </div>
+
+  <div class="field">
+    <%= f.label :daughter_vessel %>
+    <%= f.text_field :daughter_vessel %>
+  </div>
+
+  <div class="field">
+    <%= f.label :daughter_vessel_bl %>
+    <%= f.date_select :daughter_vessel_bl %>
+  </div>
+
+  <div class="field">
+    <%= f.label :receiving_depot %>
+    <%= f.text_field :receiving_depot %>
+  </div>
+
+  <div class="field">
+    <%= f.label :shore_receipt_date %>
+    <%= f.date_select :shore_receipt_date %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

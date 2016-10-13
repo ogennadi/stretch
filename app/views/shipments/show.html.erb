@@ -1,0 +1,76 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Marketer:</strong>
+  <%= @shipment.marketer %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @shipment.product %>
+</p>
+
+<p>
+  <strong>Arrived at:</strong>
+  <%= @shipment.arrived_at %>
+</p>
+
+<p>
+  <strong>Mother vessel:</strong>
+  <%= @shipment.mother_vessel %>
+</p>
+
+<p>
+  <strong>Mother vessel bl:</strong>
+  <%= @shipment.mother_vessel_bl %>
+</p>
+
+<p>
+  <strong>Jetty:</strong>
+  <%= @shipment.jetty %>
+</p>
+
+<p>
+  <strong>Daughter vessel:</strong>
+  <%= @shipment.daughter_vessel %>
+</p>
+
+<p>
+  <strong>Daughter vessel bl:</strong>
+  <%= @shipment.daughter_vessel_bl %>
+</p>
+
+<p>
+  <strong>Receiving depot:</strong>
+  <%= @shipment.receiving_depot %>
+</p>
+
+<p>
+  <strong>Shore receipt date:</strong>
+  <%= @shipment.shore_receipt_date %>
+</p>
+
+<%= link_to 'Edit', edit_shipment_path(@shipment) %> |
+<%= link_to 'Back', shipments_path %>
+
+<h2>Importation Documents</h2>
+  <%= button_to "Collate Documents", action: "collate" %>
+
+  <table>
+    <thead>
+      <td>Content</td>
+      <td>Status</td>
+      <!--<td>Upload</td>-->
+    </thead>
+
+    <tbody>
+    <% @shipment.documents.each do |document| %>
+      <tr>
+        <td><%= document.title %></td>
+        <td><%= document.status %></td>
+        <td><%= link_to 'Show', document %></td>
+        <td><%= link_to 'Edit', edit_document_path %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>

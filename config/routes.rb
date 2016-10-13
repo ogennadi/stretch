@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root :to => "shipments#index"
+
+  resources :documents
+
+  resources :shipments
+  post 'shipments/collate/:id', to: 'shipments#collate'
 end

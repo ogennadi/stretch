@@ -1,0 +1,22 @@
+Shipping DMS
+============
+This is a document management system tailored for petroleum importers in Nigeria.
+
+Installation
+------------
+Characters:
+- Devbox (Your development machine)
+- Server (The computer running the production app)
+- Vagrantbox (the virtual machine running on Devbox which emulates Server)
+
+To hack this app you need to install the ff. on Devbox:
+
+- Vagrant
+- VirtualBox
+
+
+To setup Devbox for hacking:
+
+- Clone this repo
+- cd into and `vagrant up` (this will take a while)
+- Browse to `localhost:9999` to view the running app
