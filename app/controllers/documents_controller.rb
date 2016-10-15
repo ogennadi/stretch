@@ -41,7 +41,7 @@ class DocumentsController < ApplicationController
   # PATCH/PUT /documents/1.json
   def update
     respond_to do |format|
-      location        = @document.shipment.upload_dir.join(@document.title + ".pdf")
+      location        = @document.shipment.upload_dir.join(@document.sanitized_title + ".pdf")
       @document.path  = location
 
       File.open(Rails.root.join('public', location), 'wb') do |file|

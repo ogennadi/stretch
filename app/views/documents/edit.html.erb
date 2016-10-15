@@ -1,6 +1,15 @@
+<% content_for :title do %>
+  Editing <%= @document.title %>
+<% end %>
+
 <h1>Editing Document</h1>
+
+<p>
+  <strong>Title:</strong>
+  <%= @document.title %>
+</p>
 
 <%= render 'form', document: @document %>
 
 <%= link_to 'Show', @document %> |
-<%= link_to 'Back', documents_path %>
+<%= link_to 'Back', shipment_path(@document.shipment) %>

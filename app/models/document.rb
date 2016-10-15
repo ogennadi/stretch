@@ -20,4 +20,10 @@ class Document < ApplicationRecord
   def web_path
     "/" + path
   end
+
+  def sanitized_title
+    title.strip.tap do |name|
+      name.gsub! /[^\w\.\-]/, '_'
+    end
+  end
 end
